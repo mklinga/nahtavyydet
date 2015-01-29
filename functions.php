@@ -21,6 +21,12 @@ $roots_includes = array(
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
+
+  /* Nähtävyydet */
+
+  'custom-taxonomies.php',   // Custom taxonomies
+  'custom-posts.php'         // Custom post types
+
 );
 
 foreach ($roots_includes as $file) {
