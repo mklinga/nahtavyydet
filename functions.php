@@ -24,8 +24,8 @@ $roots_includes = array(
 
   /* Nähtävyydet */
 
-  'custom-taxonomies.php',   // Custom taxonomies
-  'custom-posts.php'         // Custom post types
+  'custom-posts.php',         // Custom post types
+  'custom-metadata.php'      // Custom metadata
 
 );
 
