@@ -18,6 +18,11 @@ if ($location != "")
   $attractions = new WP_Query( $args );
   if ($attractions->have_posts() ) {
     while ( $attractions->have_posts() ) {
+
+      /*
+       *    Attraction code begins here
+       */
+
       $attractions->the_post();
 
 ?>
@@ -31,9 +36,13 @@ if ($location != "")
         <?php the_content(); ?>
       </div>
       <div>
-        <?php comments_template('/templates/comments.php'); ?>
+        <?php /* comments_template('/templates/comments.php'); */ ?>
       </div>
 <?php
+
+      /*
+       *    Attraction code ends
+       */
     }
 
   }

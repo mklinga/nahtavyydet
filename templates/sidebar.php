@@ -1,4 +1,5 @@
 <?php dynamic_sidebar('sidebar-primary'); ?>
+
 <div class="sidelinks">
   <ul>
     <li><a href="#">Erikoisuudet</a></li>
