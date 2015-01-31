@@ -30,9 +30,19 @@ if ($location != "")
 
 <?php
       $attraction_type = get_post_meta( get_the_ID(), 'attraction-type', true );
+      $attraction_home = get_post_meta( get_the_ID(), 'attraction-homepage', true );
+      $attraction_map = get_post_meta( get_the_ID(), 'attraction-map-location', true );
+      $attraction_address = get_post_meta( get_the_ID(), 'attraction-address', true );
+
+      if ($attraction_address !== "")
+        echo '<span class="address">'.$attraction_address.'</span><br>';
+      if ($attraction_home !== "")
+        echo '<a class="icon-home" href="'.$attraction_home.'">Kotisivu</a>';
+      if ($attraction_map !== "")
+        echo '<a class="icon-map" target="_blank" href="'.$attraction_map.'">Näytä kartalla</a>';
 ?>
-      <span class="attraction-category"><?php echo $attraction_type; ?></span>
-      <div class="content">
+      <!-- <span class="attraction&#45;category"><?php echo $attraction_type; ?></span> -->
+      <div class="content attraction-content">
         <?php the_content(); ?>
       </div>
       <div>
