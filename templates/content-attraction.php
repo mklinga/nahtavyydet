@@ -34,13 +34,17 @@ if ($location != "")
       $attraction_map = get_post_meta( get_the_ID(), 'attraction-map-location', true );
       $attraction_address = get_post_meta( get_the_ID(), 'attraction-address', true );
 
-      if ($attraction_address !== "")
-        echo '<span class="address">'.$attraction_address.'</span><br>';
-      if ($attraction_home !== "")
-        echo '<a class="icon-home" href="'.$attraction_home.'">Kotisivu</a>';
-      if ($attraction_map !== "")
-        echo '<a class="icon-map" target="_blank" href="'.$attraction_map.'">Näytä kartalla</a>';
 ?>
+      <div class="attraction-details">
+<?php
+      if ($attraction_address !== "")
+        echo '<span class="attraction-address">'.$attraction_address.'</span><br>';
+      if ($attraction_home !== "")
+        echo '<a class="icon-home attraction-link" target="_blank" href="'.$attraction_home.'">Kotisivu</a><br>';
+      if ($attraction_map !== "")
+        echo '<a class="icon-map attraction-link" target="_blank" href="'.$attraction_map.'">Näytä kartalla</a>';
+?>
+      </div>
       <!-- <span class="attraction&#45;category"><?php echo $attraction_type; ?></span> -->
       <div class="content attraction-content">
         <?php the_content(); ?>
