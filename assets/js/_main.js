@@ -25,6 +25,11 @@ var Roots = {
       // JavaScript to be fired on all pages
     }
   },
+  single_post: {
+    init: function() {
+      
+    }
+  },
   // Home page
   home: {
     init: function() {
