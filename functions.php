@@ -25,8 +25,9 @@ $roots_includes = array(
   /* Nähtävyydet */
 
   'custom-posts.php',         // Custom post types
-  'custom-metadata.php'      // Custom metadata
+  'custom-metadata.php',     // Custom metadata
 
+  'custom-scripts.php'
 );
 
 foreach ($roots_includes as $file) {
