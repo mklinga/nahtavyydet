@@ -35,7 +35,7 @@ function post_types_adding() {
     'rewrite' => array('slug' => 'nahtavyydet', 'with_front' => true),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-post-format' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-post-format', 'comments' ),
     'taxonomies' => array('ct_attraction', 'ct_location'),
   );
 

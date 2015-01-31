@@ -30,6 +30,9 @@ if ($location != "")
       <div class="content">
         <?php the_content(); ?>
       </div>
+      <div>
+        <?php comments_template('/templates/comments.php'); ?>
+      </div>
 <?php
     }
 
