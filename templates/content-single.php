@@ -2,7 +2,7 @@
     <header>
 <?php
     if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-      the_post_thumbnail('large');
+      the_post_thumbnail();
 }
 ?>
   <h1 class="entry-title"><?php the_title(); ?></h1>
