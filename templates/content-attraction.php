@@ -40,9 +40,9 @@ if ($location != "")
       if ($attraction_address !== "")
         echo '<span class="attraction-address">'.$attraction_address.'</span><br>';
       if ($attraction_home !== "")
-        echo '<a class="icon-home attraction-link" target="_blank" href="'.$attraction_home.'">Kotisivu</a><br>';
+        echo '<a class="icon-home attraction-link" target="_blank" href="'.$attraction_home.'"></a>';
       if ($attraction_map !== "")
-        echo '<a class="icon-map attraction-link" target="_blank" href="'.$attraction_map.'">Näytä kartalla</a>';
+        echo '<a class="icon-map attraction-link" target="_blank" href="'.$attraction_map.'"></a>';
 ?>
       </div>
       <!-- <span class="attraction&#45;category"><?php echo $attraction_type; ?></span> -->
