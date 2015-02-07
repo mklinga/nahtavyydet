@@ -1,9 +1,18 @@
-<?php dynamic_sidebar('sidebar-primary'); ?>
+<?php
+// dynamic_sidebar('sidebar-primary');
+?>
+<h1>Navigointi</h1>
 
-<div class="sidelinks">
+<nav class="sidebar-nav">
   <ul>
-    <li><a href="#">Erikoisuudet</a></li>
-    <li><a href="#">Klassikot</a></li>
-    <li><a href="#">Rentoutuminen</a></li>
+    <li class="selected">
+      <span><?php echo $country; ?></span>
+      <ul>
+        <li class="selected">Tampere</li>
+        <li>Helsinki</li>
+      </ul>
+    </li>
+    <li class="">Ruotsi</li>
+    <li class="">Kroatia</li>
   </ul>
-</div>
+</nav>

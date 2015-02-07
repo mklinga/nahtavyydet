@@ -6,4 +6,40 @@ aside.sidebar {
   h1,h2,h3 {
     margin: 0;
   }
+
+  h1 {
+    font-size: large;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 0;
+
+      &.selected {
+        color: white;
+
+        span {
+          display: block;
+          background: rgba(0,0,0, 0.8);
+          padding: 10px;
+        }
+
+        ul {
+          background: white;
+          color: black;
+          padding: 0 25px;
+          li {
+            &.selected {
+              background: white;
+              color: blue;
+            }
+          }
+        }
+      }
+    }
+  }
 }
