@@ -8,13 +8,13 @@
     <h1 class="entry-title"><?php the_title(); ?></h1>
 
 <?php
-  $country = get_post_meta( get_the_ID(), 'attraction-country', true );
-  $city = get_post_meta( get_the_ID(), 'attraction-city', true );
-  $url = get_post_meta( get_the_ID(), 'attraction-homepage', true );
+  $country = get_post_meta( get_the_ID(), 'location-country', true );
+  $city = get_post_meta( get_the_ID(), 'location-city', true );
+  $pic = get_post_meta( get_the_ID(), 'location-picture-credit', true );
 ?>
     <a href="/<?php echo $country; ?>"><span class="subheader-country"><?php echo $country; ?></span></a> &gt; 
     <a href="/<?php echo $city; ?>"><span class="subheader-city"><?php echo $city; ?></span></a>
-    <a target="_blank" href="<?php echo $url ?>"><span class="subheader-wikipedia">Wikipedia</span></a>
+    <span class="subheader-credit">Kuva: <?php echo $pic; ?></span>
   
   </header>
     <?php if (roots_display_sidebar()) : ?>
