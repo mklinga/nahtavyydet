@@ -17,6 +17,12 @@
     <a target="_blank" href="<?php echo $url ?>"><span class="subheader-wikipedia">Wikipedia</span></a>
   
   </header>
+    <?php if (roots_display_sidebar()) : ?>
+      <aside class="sidebar" role="complementary">
+        <?php include roots_sidebar_path(); ?>
+      </aside><!-- /.sidebar -->
+    <?php endif; ?>
+
   <article <?php post_class(); ?>>
     <div class="entry-content">
       <?php the_content(); ?>
