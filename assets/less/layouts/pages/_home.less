@@ -3,16 +3,6 @@ body.page-template-template-home > header {
   display: none;
 }
 
-body.page-template-template-home article {
-
-  .make-sm-column(@home-sm-columns);
-  .make-md-column(@home-md-columns);
-  .make-lg-column(@home-lg-columns);
-
-}
-
-
-
 .home-page-header {
 
   background-image: url('../img/c.jpg');
@@ -48,4 +38,29 @@ body.page-template-template-home article {
     margin: 3px 0 0 0;
   }
 
+}
+
+body.page-template-template-home article,
+body.page-template-template-home section {
+
+  .make-sm-column(@home-sm-columns);
+  .make-md-column(@home-md-columns);
+  .make-lg-column(@home-lg-columns);
+
+}
+
+body.page-template-template-home section {
+
+  #recent-posts {
+
+    list-style-type: none; 
+
+    li.recent-post-item {
+      display: inline-block;
+      float: left;
+      width: 30%;
+
+    }
+
+  }
 }

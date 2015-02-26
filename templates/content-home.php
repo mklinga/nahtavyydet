@@ -7,9 +7,9 @@
       </div>
     </article>
 
-    <section class="newest-posts">
+    <section>
       <h2>Uusimmat artikkelit</h2>
-      <ul>
+      <ul id="recent-posts">
       <?php
         $args = array( 
           'numberposts' => '3',
@@ -17,9 +17,10 @@
         $recent_posts = wp_get_recent_posts( $args );
         foreach( $recent_posts as $recent ){
 ?>
-        <li>
+        <li class="recent-post-item">
           <a href="<?php echo get_permalink($recent["ID"]); ?>">
-            <?php echo $recent["post_title"]; ?>
+            <?php echo get_the_post_thumbnail($recent["ID"], 'thumbnail'); ?>
+            <span class="post-title"><?php echo $recent["post_title"]; ?></span>
           </a>
         </li>
 <?php
