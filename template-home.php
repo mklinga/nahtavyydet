@@ -4,7 +4,6 @@ Template Name: Home Template
 */
 ?>
 
-
 <header class="home-page-header">
   <div id="home-header-text">
     <h1>Nähtävyydet.fi</h1>
@@ -13,6 +12,5 @@ Template Name: Home Template
 </header>
 
 <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
+  <?php get_template_part('templates/content', 'home'); ?>
 <?php endwhile; ?>

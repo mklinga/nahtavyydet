@@ -1,6 +1,7 @@
 <?php
 
-$location = get_post_meta( get_the_ID(), 'attraction-location', true);
+$location = get_post_meta( get_the_ID(), 'location-city', true);
+
 if ($location != "")
 {
   $args = array(

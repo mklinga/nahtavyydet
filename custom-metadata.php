@@ -113,6 +113,7 @@ function location_content( $object ) {
 
 function location_meta_box() {
   add_meta_box( 'location-meta', 'Location Details', 'location_content', 'post', 'side', 'high');
+  add_meta_box( 'location-meta', 'Location Details', 'location_content', 'page', 'side', 'high');
 }
 
 function location_meta_save( $post_id ) {
