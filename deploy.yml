@@ -10,6 +10,11 @@
         name: grunt-cli
         global: yes
 
+    - name: Remove cloned directory
+      file:
+        path: "/nahtavyydet/theme"
+        state: absent
+
     - name: Create theme directory
       file:
         path: "/nahtavyydet/theme"
@@ -46,14 +51,9 @@
     - name: Add theme to container
       docker:
         image: busybox
-        command: "/bin/sh -c 'cp -r /nahtavyydet-theme /var/www/html/wp-content/themes/nahtavyydet'"
+        command: "/bin/sh -c 'cp -r /nahtavyydet /var/www/html/wp-content/themes/'"
         volumes:
-          - "/nahtavyydet/theme:/nahtavyydet-theme"
+          - "/nahtavyydet/theme:/nahtavyydet"
         volumes_from: nahtavyydet
         state: running
-
-    - name: Remove cloned directory
-      file:
-        path: "/nahtavyydet/theme"
-        state: absent
 
