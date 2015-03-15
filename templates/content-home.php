@@ -8,7 +8,7 @@
     </article>
 
     <section>
-      <h2>Uusimmat artikkelit</h2>
+      <h2>Uusimmat kirjoitukset</h2>
       <ul id="recent-posts">
       <?php
         $args = array( 
