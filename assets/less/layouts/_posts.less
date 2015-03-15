@@ -14,60 +14,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Regular';
 }
 
-#single-post-header {
-  width: 100%;
-  position: relative;
-  margin-bottom: 50px;
+body.single-post {
 
-  img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    margin: 0 auto;
+  aside {
+    .make-sm-column(@article-sidebar-sm-columns);
+    .make-md-column(@article-sidebar-md-columns);
+    .make-lg-column(@article-sidebar-lg-columns);
   }
 
-  .entry-title {
-    text-align: center;
-    background: rgba(0,0,0,0.8);
-    position: absolute;
-    color: white;
-    top: 3em;
-    left: 210px;
-    padding: 20px 20px;
-    margin: 0;
+  article {
 
-    h1 {
-      font-size: xx-large;
-      font-weight: bold;
-      margin-top: 0;
+    .make-sm-column(@article-sm-columns);
+    .make-md-column(@article-md-columns);
+    .make-lg-column(@article-lg-columns);
+
+    .entry-content {
+
     }
 
-    h2 {
-      margin: 0;
-      text-transform: uppercase;
-      font-size: xx-small;
+    .attraction-list {
+
     }
-
-  }
-
-  .subheader-credit {
-    float: right;
-    font-size: smaller;
-  }
 }
-
-article {
-
-  .make-sm-column(@article-sm-columns);
-  .make-md-column(@article-md-columns);
-  .make-lg-column(@article-lg-columns);
-
-  .entry-content {
-
-  }
-
-  .attraction-list {
-    
-  }
 }

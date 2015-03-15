@@ -1,5 +1,5 @@
 <?php while (have_posts()) : the_post(); ?>
-  <header id="single-post-header">
+  <header id="single-page-header">
 
 <?php
   if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
