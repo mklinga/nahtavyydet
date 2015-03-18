@@ -12,17 +12,19 @@ body.page-template-template-home {
     .make-md-column(@home-md-featured-columns);
     .make-lg-column(@home-lg-featured-columns);
 
-    margin: 0 auto;
-    float: none;
-    padding: 0;
+    @media(max-width: @screen-md) {
+      padding: 0;
+    }
 
     div {
 
       /* The thumbnail maximum is 600px */
       max-width: 600px;
+      margin: 0 auto;
 
       img {
         max-width: 100%;
+        height: auto;
       }
 
       .featured-header {
@@ -100,6 +102,8 @@ body.page-template-template-home {
     .make-sm-column(@home-sm-article-columns);
     .make-md-column(@home-md-article-columns);
     .make-lg-column(@home-lg-article-columns);
+
+    margin-top: 25px;
 
     #recent-posts {
 

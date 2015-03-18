@@ -13,7 +13,8 @@
       <aside class="home-aside-right">
         <?php get_template_part('templates/home', 'aside-right'); ?>
       </aside>
-
+    </div>
+    <div class="row">
       <section class="articles">
         <?php get_template_part('templates/home', 'main-content'); ?>
       </section>
