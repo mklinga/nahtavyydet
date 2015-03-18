@@ -3,7 +3,7 @@
 
     <div <?php post_class(); ?>>
       <aside class="hidden-xs hidden-sm home-aside-left">
-        This is aside left
+        <?php get_template_part('templates/home', 'aside-left'); ?>
       </aside>
 
       <section class="featured-post">
