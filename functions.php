@@ -25,7 +25,8 @@ $roots_includes = array(
   /* Nähtävyydet */
 
   'custom-posts.php',         // Custom post types
-  'custom-metadata.php',     // Custom metadata
+  'custom-metadata.php',      // Custom metadata
+  'custom-sidebar.php',       // custom sidebars
 
   'custom-scripts.php'
 );

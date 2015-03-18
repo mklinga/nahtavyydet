@@ -11,7 +11,7 @@
         </div>
       </article>
       <aside class="home-aside-right">
-        This is aside right
+        <?php get_template_part('templates/home', 'aside-right'); ?>
       </aside>
 
       <section>
