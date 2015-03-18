@@ -2,49 +2,32 @@ body.page-template-template-home {
 
   /*
 
-      Dimensions 
-
-  */
-
-  article,
-  section {
-    .make-sm-column(@home-sm-article-columns);
-    .make-md-column(@home-md-article-columns);
-    .make-lg-column(@home-lg-article-columns);
-  }
-
-  .home-aside-left {
-    .make-sm-column(@home-sm-aside-left-columns);
-    .make-md-column(@home-md-aside-left-columns);
-    .make-lg-column(@home-lg-aside-left-columns);
-
-    border: 1px solid #ccc;
-  }
-
-  /*
-
       Featured article
 
    */
 
-  div.featured-post {
+  section.featured-post {
 
-    .make-sm-column(@home-sm-article-columns);
-    .make-md-column(@home-md-article-columns);
-    .make-lg-column(@home-lg-article-columns);
+    .make-sm-column(@home-sm-featured-columns);
+    .make-md-column(@home-md-featured-columns);
+    .make-lg-column(@home-lg-featured-columns);
 
     margin: 0 auto;
     float: none;
+    padding: 0;
 
-    /* The thumbnail maximum is 600px */
-    max-width: 600px;
+    div {
 
-    img {
-      max-width: 100%;
-    }
+      /* The thumbnail maximum is 600px */
+      max-width: 600px;
 
-    .featured-header {
-      margin: 0;
+      img {
+        max-width: 100%;
+      }
+
+      .featured-header {
+        margin: 0;
+      }
     }
   }
 
@@ -60,6 +43,11 @@ body.page-template-template-home {
     .make-lg-column(@home-lg-aside-right-columns);
 
     padding: 0;
+
+    @media(min-width: @screen-md) {
+      padding: 5px;
+      padding-left: 15px;
+    }
 
     h3 {
       margin: 0;
@@ -85,7 +73,33 @@ body.page-template-template-home {
     }
   }
 
-  section {
+  /*
+
+      Sidebar - left
+
+  */
+
+
+  aside.home-aside-left {
+    
+    /* home-aside-left is hidden on xs and sm */
+
+    .make-md-column(@home-md-aside-left-columns);
+    .make-lg-column(@home-lg-aside-left-columns);
+
+  }
+
+  /*
+
+      Articles
+
+  */
+
+  section.articles {
+
+    .make-sm-column(@home-sm-article-columns);
+    .make-md-column(@home-md-article-columns);
+    .make-lg-column(@home-lg-article-columns);
 
     #recent-posts {
 
@@ -95,13 +109,15 @@ body.page-template-template-home {
       li.recent-post-item {
         display: inline-block;
         float: left;
-        width: 50%;
+        width: 24%;
         position: relative;
+
+        margin: 5px;
 
         img {
           width: 100%;
+          height: auto;
           overflow: hidden;
-          // height: 100%;
         }
 
         span {
