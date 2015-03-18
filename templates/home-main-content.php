@@ -1,3 +1,6 @@
+<?php the_content(); ?>
+<?php
+/*
 <h2>Uusimmat kirjoitukset</h2>
 <ul id="recent-posts">
 <?php
@@ -17,3 +20,4 @@ foreach( $recent_posts as $recent ){
 }
 ?>
 </ul>
+ */?>
