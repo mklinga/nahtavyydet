@@ -1,5 +1,11 @@
 body.page-template-template-home {
 
+  /*
+
+      Dimensions 
+
+  */
+
   article,
   section {
     .make-sm-column(@home-sm-article-columns);
@@ -11,20 +17,38 @@ body.page-template-template-home {
     .make-sm-column(@home-sm-aside-left-columns);
     .make-md-column(@home-md-aside-left-columns);
     .make-lg-column(@home-lg-aside-left-columns);
+
+    border: 1px solid #ccc;
   }
 
   .home-aside-right {
     .make-sm-column(@home-sm-aside-right-columns);
     .make-md-column(@home-md-aside-right-columns);
     .make-lg-column(@home-lg-aside-right-columns);
-    background: blue;
-
+    border: 1px solid #ccc;
   }
 
-  .entry-content {
-    padding-top: 25px;
+  /*
 
+      Featured article
+
+   */
+
+  div.featured-post {
+
+    margin: 0 auto;
+    float: none;
+    max-width: 600px;
+
+    img {
+      max-width: 100%;
+    }
+
+    .featured-header {
+      margin: 0;
+    }
   }
+
 
   section {
 

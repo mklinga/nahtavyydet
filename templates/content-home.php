@@ -7,7 +7,7 @@
       </aside>
         <article>
         <div class="entry-content">
-          <?php the_content(); ?>
+          <?php get_template_part('templates/home', 'featured-article'); ?>
         </div>
       </article>
       <aside class="home-aside-right">
