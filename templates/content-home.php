@@ -5,11 +5,11 @@
       <aside class="home-aside-left">
         This is aside left
       </aside>
-        <article>
-        <div class="entry-content">
-          <?php get_template_part('templates/home', 'featured-article'); ?>
-        </div>
-      </article>
+
+      <div class="featured-post">
+        <?php get_template_part('templates/home', 'featured-article'); ?>
+      </div>
+
       <aside class="home-aside-right">
         <?php get_template_part('templates/home', 'aside-right'); ?>
       </aside>
