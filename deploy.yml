@@ -3,6 +3,10 @@
 
   sudo: True
 
+  vars:
+
+    - remove_old_directory: False
+
   tasks:
 
     - name: Install grunt
@@ -14,6 +18,7 @@
       file:
         path: "/nahtavyydet/theme"
         state: absent
+      when: remove_old_directory
 
     - name: Create theme directory
       file:
