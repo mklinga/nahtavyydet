@@ -16,16 +16,20 @@ body.single-post {
     }
   }
   aside {
-    .make-sm-column(@article-sidebar-sm-columns);
-    .make-md-column(@article-sidebar-md-columns);
-    .make-lg-column(@article-sidebar-lg-columns);
+    .make-sm-column(@post-article-sidebar-sm-columns);
+    .make-md-column(@post-article-sidebar-md-columns);
+    .make-lg-column(@post-article-sidebar-lg-columns);
   }
 
   article {
 
-    .make-sm-column(@article-sm-columns);
-    .make-md-column(@article-md-columns);
-    .make-lg-column(@article-lg-columns);
+    .make-sm-column(@post-article-sm-columns);
+    .make-md-column(@post-article-md-columns);
+    .make-lg-column(@post-article-lg-columns);
+
+    h1 {
+      margin-bottom: 25px;
+    }
 
     .entry-content {
 

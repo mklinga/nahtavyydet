@@ -18,11 +18,17 @@ body.page-template-template-home {
 
     div {
 
+      position: relative;
       width: 49%;
       display: inline-block;
+      margin: 0 0 15px 0;
 
       &.featured-item-1 {
         width: 100%;
+      }
+
+      &.featured-item-3 {
+        float: right;
       }
       img {
         max-width: 100%;
@@ -30,8 +36,29 @@ body.page-template-template-home {
       }
 
       .featured-header {
+        background: rgba(0, 0, 0, 0.8);
+        bottom: 0;
+        color: white;
+        left: 0;
         margin: 0;
+        padding: 5px;
+        position: absolute;
+
+        h2 {
+          display: inline-block;
+          margin: 0;
+          font-size: large;
+        }
+
+        span.post-date {
+          color: #ccc;
+          display: block;
+          font-size: small;
+          margin: 0;
+          padding: 0;
+        }
       }
+
     }
   }
 
@@ -50,8 +77,8 @@ body.page-template-template-home {
 
     .google-large-rectangle {
       background-color: #eef;
-      width: 336px;
-      height: 280px;
+      width: 300px;
+      height: 600px;
     }
   }
 
