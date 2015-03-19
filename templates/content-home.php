@@ -2,9 +2,6 @@
   <div class="row">
 
     <div <?php post_class(); ?>>
-      <aside class="hidden-xs hidden-sm home-aside-left">
-        <?php get_template_part('templates/home', 'aside-left'); ?>
-      </aside>
 
       <section class="featured-post">
           <?php get_template_part('templates/home', 'featured-article'); ?>

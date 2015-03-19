@@ -8,7 +8,7 @@ if ($query->have_posts() ) {
 <div>
   <a href="<?php echo the_permalink(); ?>">
 <?php
-    echo the_post_thumbnail('medium');
+    echo the_post_thumbnail();
 ?>
     <h2 class="featured-header"><?php the_title(); ?></h2>
 </a>
@@ -16,4 +16,5 @@ if ($query->have_posts() ) {
 <?php
   }
 }
+wp_reset_postdata();
 ?>

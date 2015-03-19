@@ -1,6 +1,7 @@
 <?php
-if ( function_exists('dynamic_sidebar')) {
-  dynamic_sidebar('frontpage-right');
-}
+// if ( function_exists('dynamic_sidebar')) {
+//   dynamic_sidebar('frontpage-right');
+// }
+//
 ?>
-<div style="clear:both"></div>
+<div class="google-large-rectangle"></div>
