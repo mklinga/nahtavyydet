@@ -45,7 +45,10 @@ $query = new WP_Query(
 
 if ($query->have_posts() ) {
   $is_left = false;
+  $amount = 0;
   while ($query->have_posts() ) {
+    ++$amount;
+    if ($amount == 5) break;
 
     $query->the_post();
 
