@@ -9,8 +9,12 @@
     <h1><?php the_title(); ?></h1>
     <h2><?php echo get_the_date(); ?></h2>
   </div>
+<?php
+  $caption = get_post(get_post_thumbnail_id())->post_excerpt;
+  if ($caption != '')
+    echo '<span class="post-caption">' . $caption . '</span>';
+?>
 </section>
-
 <div class="container">
   <main class="content row main" role="main">
 
