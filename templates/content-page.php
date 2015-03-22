@@ -6,7 +6,7 @@
     the_post_thumbnail();
   }
 ?>
-    <div class="entry-title">
+    <div class="image-title-box">
       <h1><?php the_title(); ?></h1>
       <h2>Suomi</h2>
     </div>

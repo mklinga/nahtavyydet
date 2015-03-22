@@ -33,7 +33,7 @@ if ($query->have_posts() ) {
 wp_reset_postdata();
 
 /*
- *    Latest
+ *    Latest posts
  */
 
 $query = new WP_Query(

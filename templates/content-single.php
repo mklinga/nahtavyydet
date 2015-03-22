@@ -4,6 +4,11 @@
     the_post_thumbnail('extra-large');
   }
 ?>
+
+  <div class="image-title-box">
+    <h1><?php the_title(); ?></h1>
+    <h2><?php echo get_the_date(); ?></h2>
+  </div>
 </section>
 
 <div class="container">
@@ -14,7 +19,6 @@
     </aside><!-- /.sidebar -->
 
     <article <?php post_class(); ?>>
-      <h1><?php the_title(); ?></h1>
       <div class="entry-content">
         <?php the_content(); ?>
       </div>
