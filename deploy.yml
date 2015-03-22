@@ -30,7 +30,7 @@
         volumes_from: nahtavyydet
         state: running
 
-    - name: Remove cloned directory
+    - name: Remove old directory
       file:
         path: "/nahtavyydet/theme"
         state: absent
