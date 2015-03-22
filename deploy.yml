@@ -9,42 +9,10 @@
 
   tasks:
 
-    - name: Install grunt
-      npm:
-        name: grunt-cli
-        global: yes
-
-    - name: Remove cloned directory
-      file:
-        path: "/nahtavyydet/theme"
-        state: absent
-      when: remove_old_directory
-
-    - name: Create theme directory
-      file:
-        path: "/nahtavyydet/theme"
-        mode: 0755
-        owner: laite
-        state: directory
-
-    - name: Clone the theme repository
-      git:
-        accept_hostkey: yes
-        dest: "/nahtavyydet/theme"
-        repo: "git@github.com:laite/nahtavyydet.git"
-      sudo_user: laite
-
-    - name: Install build dependencies
-      shell: npm install
+    - name: Unpackage theme
+      shell: "tar xjf dist.tar.bz2"
       args:
-        chdir: /nahtavyydet/theme
-      sudo_user: laite
-
-    - name: Build production assets
-      shell: grunt build
-      args:
-        chdir: /nahtavyydet/theme
-      sudo_user: laite
+        chdir: "/nahtavyydet"
 
     - name: Remove existing theme contents from container
       docker:
@@ -58,7 +26,11 @@
         image: busybox
         command: "/bin/sh -c 'cp -r /nahtavyydet /var/www/html/wp-content/themes/'"
         volumes:
-          - "/nahtavyydet/theme:/nahtavyydet"
+          - "/nahtavyydet/dist:/nahtavyydet"
         volumes_from: nahtavyydet
         state: running
 
+    - name: Remove cloned directory
+      file:
+        path: "/nahtavyydet/theme"
+        state: absent
