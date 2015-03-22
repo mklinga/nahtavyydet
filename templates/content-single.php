@@ -15,7 +15,7 @@
     echo '<span class="post-caption">' . $caption . '</span>';
 ?>
 </section>
-<div class="container">
+<div id="single-post-content" class="container">
   <main class="content row main" role="main">
 
     <aside class="sidebar" role="complementary">
