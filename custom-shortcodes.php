@@ -4,12 +4,15 @@ function show_attraction($attributes) {
 
   extract(shortcode_atts(array(
     "name" => '',
-    "image" => 'before-title' // TODO: support more positions
+    "image" => 'after-title' // TODO: support more positions
   ), $attributes));
+
+  if ($name === '')
+    return '';
 
   $new_attraction = new WP_Query( array(
     'post_type' => 'pt_attraction',
-    'name' => $slug,
+    'name' => $name,
     'posts_per_page' => 1
   ));
 
@@ -21,11 +24,25 @@ function show_attraction($attributes) {
       $new_attraction->the_post();
       $attraction_id = get_the_ID();
 
-      if ( has_post_thumbnail() ) {
-        $result .= get_the_post_thumbnail($attraction_id, 'large');
-      }
+      /* Title */
       $result .= '<h2>' . get_the_title($attraction_id) . '</h2>';
-      $result .=  get_the_content($attraction_id);
+
+      /* Attraction image and caption */
+      if ( has_post_thumbnail() ) {
+        $result .= '<section class="attraction-image">';
+        $result .= get_the_post_thumbnail($attraction_id, 'large');
+        $caption = get_post(get_post_thumbnail_id())->post_excerpt;
+        if ($caption != '')
+          $result .= '<span class="post-caption">' . $caption . '</span>';
+        $result .= '<div class="clear"></div>';
+        $result .= '</section>';
+      }
+
+      /* Content */
+      $content = apply_filters( 'the_content', get_the_content($attraction_id) );
+      $content = str_replace( ']]>', ']]&gt;', $content );
+      $result .= '<div class="embedded-attraction-content">' . $content . '</div>';
+
       $result .= '</div>';
     }
 
