@@ -28,8 +28,8 @@ $roots_includes = array(
   'custom-metadata.php',      // Custom metadata
   'custom-sidebar.php',       // custom sidebars
   'custom-image-sizes.php',    // Custom image sizes
-
-  'custom-scripts.php'
+  'custom-shortcodes.php',    // Custom shortcodes
+  // 'custom-scripts.php'
 );
 
 foreach ($roots_includes as $file) {
