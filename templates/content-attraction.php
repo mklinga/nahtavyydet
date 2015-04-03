@@ -8,7 +8,7 @@ if ($location != "")
     'post_type' => 'pt_attraction',
     'meta_query' => array(
       array(
-        'key' => 'attraction-location',
+        'key' => 'attraction-city',
         'value' => $location
       ),
     ),
