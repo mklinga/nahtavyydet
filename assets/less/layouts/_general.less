@@ -22,41 +22,79 @@ h2 {
   clear: both;
 }
 
-/* Image-title-box is used on pages and posts */
+body.single-post,
+body.page {
 
-.image-title-box {
-  text-align: center;
-  background: rgba(0,0,0,0.8);
-  position: absolute;
-  color: white;
-  top: 3em;
-  left: 100px;
-  padding: 20px 20px;
-  margin: 0;
+  .article-featured-image {
 
-  @media (max-width: @screen-md) {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media (max-width: @screen-xs) {
     position: relative;
-    top: 0;
-    padding: 5px 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-title-box {
+      text-align: center;
+      background: rgba(0,0,0,0.8);
+      position: absolute;
+      color: white;
+      top: 3em;
+      left: 100px;
+      padding: 20px 20px;
+      margin: 0;
+
+      @media (max-width: @screen-md) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @media (max-width: @screen-xs) {
+        position: relative;
+        top: 0;
+        padding: 5px 20px;
+      }
+
+      h1 {
+        font-size: xx-large;
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: xx-small;
+      }
+
+    }
   }
 
-  h1 {
-    font-size: xx-large;
-    font-weight: bold;
-    margin-top: 0;
+  div.article-content {
+    margin-top: 35px;
   }
 
-  h2 {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: xx-small;
+  aside {
+    .make-sm-column(@post-article-sidebar-sm-columns);
+    .make-md-column(@post-article-sidebar-md-columns);
+    .make-lg-column(@post-article-sidebar-lg-columns);
   }
 
+  article {
+
+    .make-sm-column(@post-article-sm-columns);
+    .make-md-column(@post-article-md-columns);
+    .make-lg-column(@post-article-lg-columns);
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+  }
 }
 
 .post-caption {

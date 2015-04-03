@@ -1,15 +1,8 @@
 <?php while (have_posts()) : the_post(); ?>
-  <header id="single-page-header">
 
-<?php
-  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-    the_post_thumbnail();
-  }
-?>
-    <div class="image-title-box">
-      <h1><?php the_title(); ?></h1>
-      <h2>Suomi</h2>
-    </div>
+<section class="article-featured-image" id="single-post-featured-image">
+
+  <?php get_template_part('templates/article', 'header'); ?>
 
 <?php
   $country = get_post_meta( get_the_ID(), 'location-country', true );
@@ -20,8 +13,8 @@
     <a href="/<?php echo $city; ?>"><span class="subheader-city"><?php echo $city; ?></span></a>
     <span class="subheader-credit"><?php echo $pic; ?></span>
   
-  </header>
-    <div class="container">
+  </section>
+    <div class="article-content container">
       <main class="content row main" role="main">
     <?php if (roots_display_sidebar()) : ?>
       <aside class="sidebar" role="complementary">
