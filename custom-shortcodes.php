@@ -89,7 +89,7 @@ function show_attraction_header($attributes) {
       $result .= '</a>';
 
       /* Attraction image and caption */
-      if ( has_post_thumbnail() ) {
+      if ( ( $image == "yes" ) && ( has_post_thumbnail() ) ) {
         $result .= '<section class="attraction-image">';
         $result .= get_the_post_thumbnail($attraction_id, 'large');
         $caption = get_post(get_post_thumbnail_id())->post_excerpt;
