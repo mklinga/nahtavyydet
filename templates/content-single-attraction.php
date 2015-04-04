@@ -1,4 +1,4 @@
-<section class="article-featured-image" id="single-pt_attraction-featured-image">
+<section class="article-featured-image" id="single-attraction-featured-image">
   <?php get_template_part('templates/article', 'header'); ?>
 </section>
 

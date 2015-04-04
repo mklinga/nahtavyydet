@@ -39,7 +39,7 @@ function post_types_adding() {
     'taxonomies' => array('ct_attraction', 'ct_location'),
   );
 
-  register_post_type('pt_attraction',$args);
+  register_post_type('attraction',$args);
 
   flush_rewrite_rules();
 

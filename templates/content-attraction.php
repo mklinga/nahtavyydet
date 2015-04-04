@@ -5,7 +5,7 @@ $location = get_post_meta( get_the_ID(), 'location-city', true);
 if ($location != "")
 {
   $args = array(
-    'post_type' => 'pt_attraction',
+    'post_type' => 'attraction',
     'meta_query' => array(
       array(
         'key' => 'attraction-city',

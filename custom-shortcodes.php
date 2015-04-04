@@ -11,7 +11,7 @@ function show_attraction($attributes) {
     return '';
 
   $new_attraction = new WP_Query( array(
-    'post_type' => 'pt_attraction',
+    'post_type' => 'attraction',
     'name' => $name,
     'posts_per_page' => 1
   ));
@@ -62,7 +62,6 @@ function show_attraction_header($attributes) {
   extract(shortcode_atts(array(
     "name" => '',
     "image" => 'yes',
-    "link" => 'no',
     "text" => ''
   ), $attributes));
 
@@ -70,7 +69,7 @@ function show_attraction_header($attributes) {
     return '';
 
   $new_attraction = new WP_Query( array(
-    'post_type' => 'pt_attraction',
+    'post_type' => 'attraction',
     'name' => $name,
     'posts_per_page' => 1
   ));
@@ -84,13 +83,10 @@ function show_attraction_header($attributes) {
       $attraction_id = get_the_ID();
 
       /* Title */
-      if ($link != 'no')
-        $result .= '<a href="' . get_permalink($attraction_id) .'">';
 
+      $result .= '<a href="' . get_permalink($attraction_id) .'">';
       $result .= '<h2>' . get_the_title($attraction_id) . '</h2>';
-
-      if ($link != 'no')
-        $result .= '</a>';
+      $result .= '</a>';
 
       /* Attraction image and caption */
       if ( has_post_thumbnail() ) {

@@ -37,7 +37,7 @@ function attraction_content( $object ) {
 }
 
 function attraction_meta_box() {
-  add_meta_box( 'attraction-meta', 'Attraction Details', 'attraction_content', 'pt_attraction', 'side', 'high');
+  add_meta_box( 'attraction-meta', 'Attraction Details', 'attraction_content', 'attraction', 'side', 'high');
 }
 
 function attraction_meta_save( $post_id ) {
