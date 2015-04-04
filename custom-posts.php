@@ -26,13 +26,13 @@ function post_types_adding() {
 
   $args = array(
     'labels' => $labels,
-    // 'public' => true,
+    'public' => true,
     'exclude_from_search' => true,
-    // 'publicly_queryable' => true,
+    'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
     'capability_type' => 'post',
-    'rewrite' => array('slug' => 'nahtavyydet', 'with_front' => true),
+    'rewrite' => array('slug' => 'kohteet', 'with_front' => true),
     'hierarchical' => false,
     'menu_position' => null,
     'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-post-format', 'comments' ),
