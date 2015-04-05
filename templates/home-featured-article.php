@@ -1,3 +1,5 @@
+<div class="row">
+  <section class="eight columns featured-post">
 <?php
 
 /*
@@ -31,7 +33,9 @@ if ($query->have_posts() ) {
 }
 
 wp_reset_postdata();
+?>
 
+<?php
 /*
  *    Latest posts
  */
@@ -58,7 +62,7 @@ if ($query->have_posts() ) {
     $is_left = !$is_left;
     $class_suffix = ($is_left)? "left" : "right";
 ?>
-  <div class="latest-article-<?php echo $class_suffix; ?>">
+  <div class="six columns latest-article-<?php echo $class_suffix; ?>">
   <a href="<?php echo the_permalink(); ?>">
 <?php echo the_post_thumbnail('medium'); ?>
     <section class="featured-header">
@@ -74,3 +78,8 @@ if ($query->have_posts() ) {
 wp_reset_postdata();
 
 ?>
+</section>
+  <aside class="four columns home-aside-right">
+    <?php get_template_part('templates/home', 'aside-right'); ?>
+  </aside>
+</div>
