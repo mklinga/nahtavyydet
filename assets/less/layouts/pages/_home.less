@@ -11,15 +11,20 @@ body.page-template-template-home {
     div {
 
       position: relative;
-      width: 49%;
-      display: inline-block;
-      margin: 0 0 15px 0;
+
+      @media (min-width: @bp-larger-than-mobile) {
+        width: 49%;
+        display: inline-block;
+        margin: 0 0 15px 0;
+      }
+
+      margin-bottom: 15px;
 
       &.featured-item {
         width: 100%;
       }
 
-      &.latest-article-right {
+      &.latest-article:nth-child(even) {
         float: right;
       }
 
@@ -29,13 +34,10 @@ body.page-template-template-home {
       }
 
       .featured-header {
-        background: rgba(0, 0, 0, 0.8);
-        bottom: 0;
-        color: white;
-        left: 0;
         margin: 0;
-        padding: 5px;
-        position: absolute;
+        
+        @media (min-width: @bp-larger-than-mobile) { padding: 5px; }
+        padding: 0 5px 5px 5px;
 
         h2 {
           display: inline-block;
@@ -44,11 +46,23 @@ body.page-template-template-home {
         }
 
         span.post-date {
-          color: #ccc;
-          display: block;
-          font-size: small;
-          margin: 0;
-          padding: 0;
+          display: none;
+        }
+
+        @media (min-width: @bp-larger-than-phablet) {
+
+          left: 0;
+          background: rgba(0, 0, 0, 0.8);
+          bottom: 0;
+          color: white;
+          position: absolute;
+
+          h2 {
+            display: inline-block;
+            margin: 0;
+            font-size: large;
+          }
+
         }
       }
 
@@ -69,55 +83,6 @@ body.page-template-template-home {
       // background-color: #eef;
       // width: 300px;
       // height: 600px;
-    }
-  }
-
-  /*
-
-      Articles
-
-  */
-
-  section.articles {
-
-    // .make-sm-column(@home-sm-article-columns);
-    // .make-md-column(@home-md-article-columns);
-    // .make-lg-column(@home-lg-article-columns);
-
-    margin-top: 25px;
-
-    #recent-posts {
-
-      list-style-type: none; 
-      padding: 0;
-
-      li.recent-post-item {
-        display: inline-block;
-        float: left;
-        width: 24%;
-        position: relative;
-
-        margin: 5px;
-
-        img {
-          width: 100%;
-          height: auto;
-          overflow: hidden;
-        }
-
-        span {
-          display: block;
-          color: white;
-          background: rgba(0, 0, 0, 0.8);
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          padding: 15px 5px;
-          width: 100%;
-        }
-
-      }
-
     }
   }
 

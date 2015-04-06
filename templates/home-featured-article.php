@@ -48,7 +48,6 @@ $query = new WP_Query(
 );
 
 if ($query->have_posts() ) {
-  $is_left = false;
   $amount = 0;
   while ($query->have_posts() ) {
     ++$amount;
@@ -58,11 +57,8 @@ if ($query->have_posts() ) {
 
     if (get_the_ID() === $featured_id)
       continue;
-
-    $is_left = !$is_left;
-    $class_suffix = ($is_left)? "left" : "right";
 ?>
-  <div class="six columns latest-article-<?php echo $class_suffix; ?>">
+  <div class="six columns latest-article">
   <a href="<?php echo the_permalink(); ?>">
 <?php echo the_post_thumbnail('medium'); ?>
     <section class="featured-header">
