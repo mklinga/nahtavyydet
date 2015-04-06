@@ -1,5 +1,15 @@
 header.navbar {
-  height: 50px;
+
+  form.search-form
+  {
+    margin: 0;
+    @media (max-width: @bp-larger-than-phablet) {
+      display: none;
+      float: none;
+    }
+  }
+
+  // height: 50px;
   padding: 15px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
