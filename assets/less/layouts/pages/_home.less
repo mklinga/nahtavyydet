@@ -22,6 +22,7 @@ body.page-template-template-home {
 
       &.featured-item {
         width: 100%;
+        margin-bottom: 5px;
       }
 
       &.latest-article:nth-child(even) {
@@ -35,9 +36,9 @@ body.page-template-template-home {
 
       .featured-header {
         margin: 0;
-        
-        @media (min-width: @bp-larger-than-mobile) { padding: 5px; }
         padding: 0 5px 5px 5px;
+        
+        @media (min-width: @bp-larger-than-phablet) { padding: 5px; }
 
         h2 {
           display: inline-block;
