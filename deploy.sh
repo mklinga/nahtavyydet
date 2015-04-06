@@ -23,9 +23,6 @@ cp assets/css/main.min.css dist/assets/css
 mkdir -p dist/assets/js
 cp assets/js/scripts.min.js dist/assets/js
 
-mkdir -p dist/assets/js/vendor/
-cp ./assets/js/vendor/modernizr.min.js ./dist/assets/js/vendor/modernizr.min.js
-
 mkdir -p dist/assets/fonts
 cp ./assets/fonts/* ./dist/assets/fonts
 
