@@ -1,9 +1,13 @@
  
-<section class="article-featured-image" id="single-post-featured-image">
-  <?php get_template_part('templates/article', 'header'); ?>
-</section>
 
 <div class="article-content container">
+
+  <div class="row">
+      <section class="article-featured-image" id="single-post-featured-image">
+        <?php get_template_part('templates/article', 'header'); ?>
+      </section>
+  </div>
+
   <main class="content row main" role="main">
 
     <aside class="four columns sidebar" role="complementary">
