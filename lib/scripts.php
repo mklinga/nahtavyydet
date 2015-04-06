@@ -36,11 +36,6 @@ function roots_scripts() {
 
   wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
 
-  /**
-   * jQuery is loaded using the same method from HTML5 Boilerplate:
-   * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
-   * It's kept in the header instead of footer to avoid conflicts with plugins.
-   */
   if (!is_admin() && current_theme_supports('jquery-cdn')) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', $assets['jquery'], array(), null, true);
@@ -51,8 +46,11 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('jquery', false, array(), false, true);
-  wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+  //
+  // XXX: Disable the actual scripts from loading until we have some reason to load them!
+  //
+  // wp_enqueue_script('jquery', false, array(), false, true);
+  // wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
