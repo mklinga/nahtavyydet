@@ -91,6 +91,18 @@ add_action( 'save_post', 'attraction_meta_save' );
 function location_content( $object ) {
 
   wp_nonce_field( plugin_basename( __FILE__ ), 'location_content_nonce' );
+
+  $type = esc_attr( get_post_meta( $object->ID, 'location-type', true ) );
+  echo '<p><label for="location-type">Tyyppi</label><br>';
+  echo '<select style="width: 100%;" name="location-type" id="location-type">';
+  echo '<option value="Kaupunki" '.selected( $type, "Kaupunki").'>Kaupunki</option>';
+  echo '<option value="Valtio" '.selected( $type, "Valtio").'>Valtio</option>';
+  echo '<option value="Muu" '.selected( $type, "Muu").'>Muu</option>';
+  echo '</select>';
+
+  echo '<p><label for="location-continent">Maanosa</label><br>';
+  echo '<input style="width:100%;" type="text" id="location-continent" name="location-continent" placeholder="Syötä maanosa" value="'. esc_attr( get_post_meta( $object->ID, 'location-continent', true ) ).'"/></p>';
+
   echo '<p><label for="location-country">Maa</label><br>';
   echo '<input style="width:100%;" type="text" id="location-country" name="location-country" placeholder="Syötä maa" value="'. esc_attr( get_post_meta( $object->ID, 'location-country', true ) ).'"/></p>';
 
@@ -131,6 +143,9 @@ function location_meta_save( $post_id ) {
       return;
   }
 
+  $continent = $_POST['location-continent'];
+  update_post_meta( $post_id, 'location-continent', $continent );
+
   $country = $_POST['location-country'];
   update_post_meta( $post_id, 'location-country', $country );
 
@@ -148,6 +163,9 @@ function location_meta_save( $post_id ) {
 
   $map_location = $_POST['location-map-location'];
   update_post_meta( $post_id, 'location-map-location', $map_location );
+
+  $type = $_POST['location-type'];
+  if ($type == "") $type ="Kaupunki";
 
   update_post_meta( $post_id, 'location-type', $type );
 }

@@ -11,5 +11,17 @@
 ?>
   <div class="image-title-box">
     <h1><?php the_title(); ?></h1>
-    <h2><?php echo get_the_date(); ?></h2>
+    <h2>
+<?php
+    $post_type = get_post_meta(get_the_ID(), 'location-type', true);
+    if ($post_type == "Valtio")
+      echo get_post_meta(get_the_ID(), 'location-continent', true);
+    else if ($post_type == "Kaupunki")
+      echo get_post_meta(get_the_ID(), 'location-country', true);
+    else if (($post_type == "Muu") || ($post_type == "Maanosa"))
+      echo "";
+    else
+      echo the_modified_date('F Y');
+?>
+    </h2>
   </div>
