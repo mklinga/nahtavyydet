@@ -21,10 +21,13 @@ while (have_posts()) : the_post(); ?>
 
 <?php endwhile; ?>
 
-  <div>
-    <?php
-      get_template_part('templates/country', 'content');
-    ?>
+  <div class="row">
+    <section class="twelve columns city-list">
+      <?php
+        get_template_part('templates/country', 'content');
+      ?>
+    </section>
   </div>
-</main><!-- /.main -->
+
+</main>
 
