@@ -35,10 +35,6 @@
           <?php the_content(); ?>
         </div>
 
-        <div class="attraction-list">
-          <?php get_template_part('templates/content', 'attraction'); ?>
-        </div>
-
         <div class="related-posts">
           <?php get_template_part('templates/content', 'related'); ?>
         </div>

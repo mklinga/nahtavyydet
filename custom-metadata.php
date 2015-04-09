@@ -115,9 +115,6 @@ function location_content( $object ) {
   echo '<p><label for="location-wikipedia">Wikipedia</label><br>';
   echo '<input style="width:100%;" type="text" id="location-wikipedia" name="location-wikipedia" placeholder="Wikipedia-osoite" value="'. esc_attr( get_post_meta( $object->ID, 'location-wikipedia', true ) ).'"/></p>';
 
-  echo '<p><label for="location-picture-credit">Kuvan ottaja</label><br>';
-  echo '<input style="width:100%;" type="text" id="location-picture-credit" name="location-picture-credit" placeholder="Syötä kuvan ottaja" value="'. esc_attr( get_post_meta( $object->ID, 'location-picture-credit', true ) ).'"/></p>';
-
   echo '<p><label for="location-map-location">Karttasijainti</label><br>';
   echo '<input style="width:100%;" type="text" id="location-map-location" name="location-map-location" placeholder="Syötä karttasijainti" value="'. esc_attr( get_post_meta( $object->ID, 'location-map-location', true ) ).'"/></p>';
 
@@ -157,9 +154,6 @@ function location_meta_save( $post_id ) {
 
   $wikipedia = $_POST['location-wikipedia'];
   update_post_meta( $post_id, 'location-wikipedia', $homepage );
-
-  $picture_credit = $_POST['location-picture-credit'];
-  update_post_meta( $post_id, 'location-picture-credit', $picture_credit );
 
   $map_location = $_POST['location-map-location'];
   update_post_meta( $post_id, 'location-map-location', $map_location );

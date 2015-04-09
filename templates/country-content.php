@@ -21,18 +21,24 @@ if ($country != "")
   $cities = new WP_Query( $args );
   if ($cities->have_posts() ) {
 ?>
+
   <ul class="city-links">
+
 <?php
     while ( $cities->have_posts() ) {
       $cities->the_post();
 ?>
+
     <li class="city-link">
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
     </li>
+
 <?php
     }
 ?>
+
   </ul>
+
 <?php
   }
   wp_reset_query();
