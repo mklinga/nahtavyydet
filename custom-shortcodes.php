@@ -1,64 +1,11 @@
 <?php
 
-function show_attraction($attributes) {
-
-  extract(shortcode_atts(array(
-    "name" => '',
-    "image" => 'after-title' // TODO: support more positions
-  ), $attributes));
-
-  if ($name === '')
-    return '';
-
-  $new_attraction = new WP_Query( array(
-    'post_type' => 'attraction',
-    'name' => $name,
-    'posts_per_page' => 1
-  ));
-
-  $result = '<div class="embedded-attraction">';
-
-  if ($new_attraction->have_posts()) {
-    while ($new_attraction->have_posts()) 
-    {
-      $new_attraction->the_post();
-      $attraction_id = get_the_ID();
-
-      /* Title */
-      $result .= '<h2>' . get_the_title($attraction_id) . '</h2>';
-
-      /* Attraction image and caption */
-      if ( has_post_thumbnail() ) {
-        $result .= '<section class="attraction-image">';
-        $result .= get_the_post_thumbnail($attraction_id, 'large');
-        $caption = get_post(get_post_thumbnail_id())->post_excerpt;
-        if ($caption != '')
-          $result .= '<span class="post-caption">' . $caption . '</span>';
-        $result .= '<div class="clear"></div>';
-        $result .= '</section>';
-      }
-
-      /* Content */
-      $content = apply_filters( 'the_content', get_the_content($attraction_id) );
-      $content = str_replace( ']]>', ']]&gt;', $content );
-      $result .= '<div class="embedded-attraction-content">' . $content . '</div>';
-
-      $result .= '</div>';
-    }
-
-  }
-  wp_reset_postdata();
-
-  return $result;
-}
-
-add_shortcode('attraction', 'show_attraction');
-
 /*
- * Attraction header / image
+ * Attraction
  */
 
-function show_attraction_header($attributes) {
+function show_attraction($attributes, $content = null) {
+
   extract(shortcode_atts(array(
     "name" => '',
     "image" => 'yes',
@@ -74,7 +21,7 @@ function show_attraction_header($attributes) {
     'posts_per_page' => 1
   ));
 
-  $result = '<div class="embedded-attraction-header">';
+  $result = '<div class="embedded-attraction">';
 
   if ($new_attraction->have_posts()) {
     while ($new_attraction->have_posts()) 
@@ -109,6 +56,13 @@ function show_attraction_header($attributes) {
       $result .= '<h2>' . $name . '</h2>'; // last resort, could be "unslugged attempt instead"?
   }
 
+  if ($content != null) {
+    $result .= $content;
+
+    // TODO: lue lisää - linkki tähän perään
+    // $result .= '<span class="read-more">Lue lisää...</span>';
+  }
+
   $result .= '</div>';
 
   wp_reset_postdata();
@@ -116,7 +70,30 @@ function show_attraction_header($attributes) {
   return $result;
 }
 
-add_shortcode('attraction-header', 'show_attraction_header');
+add_shortcode('attraction', 'show_attraction');
+
+/*
+ * Attraction mention
+ */
+
+function show_attraction_link($attributes) {
+
+  extract(shortcode_atts(array(
+    "name" => '',
+    "text" => ''
+  ), $attributes));
+
+  if ($name === '')
+    return '';
+
+  if ($text === '')
+    $text = $name;
+
+  $name = sanitize_title($name);
+  return '<a href="' . esc_url( get_permalink( get_page_by_path( $name, OBJECT, 'attraction' ) ) ) .'">' . $text .'</a>';
+}
+
+add_shortcode('attraction-mention', 'show_attraction_link');
 
 /*
  * Adsense
