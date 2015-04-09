@@ -15,9 +15,9 @@
      * TODO: Make top pages available!
      */
 ?>
-  <!-- <a href="/<?php echo $country; ?>"> -->
+  <a href="/<?php echo sanitize_title($country); ?>">
     <span class="subheader-country"><?php echo $country; ?></span>
-  <!-- </a> -->
+  </a>
   &gt; 
   <a href="/<?php echo $city; ?>"><span class="subheader-city"><?php echo $city; ?></span></a>
   <span class="post-caption"><?php echo $pic; ?></span>
