@@ -1,3 +1,4 @@
+<?php while (have_posts()) : the_post(); ?>
 <div class="row">
   <section class="article-featured-image" id="country-featured-image">
     <?php get_template_part('templates/article', 'header'); ?>
@@ -12,7 +13,12 @@
     </section>
   </div>
 
-  <div
-  <?php get_template_part('templates/country', 'content'); ?>
+<?php endwhile; ?>
 
+  <div>
+    <?php
+      get_template_part('templates/country', 'content');
+    ?>
+  </div>
 </main><!-- /.main -->
+
