@@ -18,6 +18,8 @@
       echo get_post_meta(get_the_ID(), 'location-continent', true);
     else if ($post_type == "Kaupunki")
       echo get_post_meta(get_the_ID(), 'location-country', true);
+    else if (get_post_meta(get_the_ID(), 'attraction-city') != "")
+      echo get_post_meta(get_the_ID(), 'attraction-city', true);
     else if (($post_type == "Muu") || ($post_type == "Maanosa"))
       echo "";
     else
