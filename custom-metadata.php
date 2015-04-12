@@ -26,7 +26,7 @@ function attraction_content( $object ) {
   echo '<p><label for="attraction-address">Osoite</label><br>';
   echo '<input style="width:100%;" type="text" id="attraction-address" name="attraction-address" placeholder="Nähtävyyden katuosoite" value="'. esc_attr( get_post_meta( $object->ID, 'attraction-address', true ) ).'"/></p>';
 
-  echo '<p><label for="attraction-tag">Tagi</label><br>';
+  echo '<p><label for="attraction-tag">Tagit (pilkulla eroteltuina)</label><br>';
   echo '<input style="width:100%;" type="text" id="attraction-tag" name="attraction-tag" placeholder="Avainsana liittyviin artikkeleihin" value="'. esc_attr( get_post_meta( $object->ID, 'attraction-tag', true ) ).'"/></p>';
 
   $type = esc_attr( get_post_meta( $object->ID, 'attraction-type', true ) );

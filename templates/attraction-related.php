@@ -1,11 +1,12 @@
 <?php
 $tag = get_post_meta(get_the_ID(), 'attraction-tag', true);
+$city = get_post_meta(get_the_ID(), 'attraction-city', true);
 
-if ($tag != "") {
+if (($tag != "") || ($city != "")) {
 
   $args = array(
     'post_type' => 'post',
-    'tag' => $tag
+    'tag' => $tag . "," . $city
   );
 
   $related = new WP_Query( $args );
