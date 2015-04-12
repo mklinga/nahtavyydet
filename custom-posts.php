@@ -27,7 +27,7 @@ function post_types_adding() {
   $args = array(
     'labels' => $labels,
     'public' => true,
-    'exclude_from_search' => true,
+    'exclude_from_search' => false,
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
@@ -35,7 +35,7 @@ function post_types_adding() {
     'rewrite' => array('slug' => 'kohteet', 'with_front' => true),
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-post-format', 'comments' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'comments'),
     'taxonomies' => array('ct_attraction', 'ct_location'),
   );
 
