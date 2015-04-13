@@ -1,5 +1,3 @@
-<div class="row">
-  <section class="eight columns featured-post">
 <?php
 
 /*
@@ -33,38 +31,32 @@ if ($query->have_posts() ) {
 }
 
 wp_reset_postdata();
-?>
 
-<?php
 /*
  *    Latest posts
  */
 
 $query = new WP_Query(
   array(
-    'posts_per_page' => 5,
-    'order_by' => 'date'
+    'posts_per_page' => 4,
+    'order_by' => 'date',
+    'post__not_in' => array($featured_id) // don't want to repeat the featured post here
   )
 );
 
 if ($query->have_posts() ) {
-  $amount = 0;
   while ($query->have_posts() ) {
-    ++$amount;
-    if ($amount == 5) break;
-
     $query->the_post();
-
-    if (get_the_ID() === $featured_id)
-      continue;
 ?>
   <div class="six columns latest-article">
   <a href="<?php echo the_permalink(); ?>">
 <?php echo the_post_thumbnail('medium'); ?>
+
     <section class="featured-header">
       <h2><?php the_title(); ?></h2>
       <span class="post-date"><?php echo get_the_date(); ?></span>
     </section>
+
 </a>
 </div>
 <?php
@@ -74,8 +66,3 @@ if ($query->have_posts() ) {
 wp_reset_postdata();
 
 ?>
-</section>
-  <aside class="four columns home-aside-right">
-    <?php get_template_part('templates/home', 'aside-right'); ?>
-  </aside>
-</div>
