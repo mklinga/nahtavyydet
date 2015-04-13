@@ -1,12 +1,12 @@
 <?php
-$tag = get_post_meta(get_the_ID(), 'attraction-tag', true);
-$city = get_post_meta(get_the_ID(), 'attraction-city', true);
+$country = get_post_meta(get_the_ID(), 'location-country', true);
+$city = get_post_meta(get_the_ID(), 'location-city', true);
 
-if (($tag != "") || ($city != "")) {
+if (($country != "") || ($city != "")) {
 
   $args = array(
     'post_type' => 'post',
-    'tag' => $tag . "," . $city
+    'tag' => $country . "," . $city
   );
 
   $related = new WP_Query( $args );
