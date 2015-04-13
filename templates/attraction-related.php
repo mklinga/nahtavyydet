@@ -19,7 +19,7 @@ if (($tag != "") || ($city != "")) {
       $related->the_post();
 
 ?>
-    <li class="related-link"><a href="<?php get_permalink(); ?>">
+    <li class="related-link"><a href="<?php the_permalink(); ?>">
 <?php
       the_post_thumbnail('thumbnail');
       the_title();
