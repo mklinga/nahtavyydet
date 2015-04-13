@@ -1,48 +1,28 @@
 <?php while (have_posts()) : the_post(); ?>
 
-<section class="article-featured-image" id="single-post-featured-image">
+<div class="article-content container">
+  <main class="content row main" role="main">
 
-  <?php get_template_part('templates/article', 'header'); ?>
+    <article <?php post_class('eight columns'); ?>>
 
-  <?php
-    $country = get_post_meta( get_the_ID(), 'location-country', true );
-    $city = get_post_meta( get_the_ID(), 'location-city', true );
-    $pic = get_post_meta( get_the_ID(), 'location-picture-credit', true );
-  ?>
-<?php
+      <section class="article-featured-image" id="single-page-featured-image">
+        <?php get_template_part('templates/article', 'header'); ?>
+      </section>
 
-    /*
-     * TODO: Make top pages available!
-     */
-?>
-  <a href="/<?php echo sanitize_title($country); ?>">
-    <span class="subheader-country"><?php echo $country; ?></span>
-  </a>
-  &gt; 
-  <a href="/<?php echo $city; ?>"><span class="subheader-city"><?php echo $city; ?></span></a>
-  <span class="post-caption"><?php echo $pic; ?></span>
-  
-</section>
-  <div class="article-content container">
-    <main class="content row main" role="main">
+      <section class="entry-content">
+        <?php the_content(); ?>
+      </section>
 
-      <aside class="four columns sidebar" role="complementary">
-        &nbsp;
-      </aside><!-- /.sidebar -->
+      <section class="related-posts">
+        <?php get_template_part('templates/page', 'related'); ?>
+      </section>
 
-      <article <?php post_class('eight columns'); ?>>
-        <div class="entry-content">
-          <?php the_content(); ?>
-        </div>
+    </article>
 
-        <div class="related-posts">
-          <?php get_template_part('templates/page', 'related'); ?>
-        </div>
+    <aside class="four columns sidebar" role="complementary">
+      &nbsp;
+    </aside><!-- /.sidebar -->
 
-        <footer>
-          <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-        </footer>
-      </article>
-    </main><!-- /.main -->
-  </div><!-- /.content -->
+  </main>
+</div>
 <?php endwhile; ?>

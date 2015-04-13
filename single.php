@@ -1,24 +1,27 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <div class="article-content container">
+  <main class="content row main" role="main">
 
-  <div class="row">
+    <article <?php post_class('eight columns'); ?>>
+
       <section class="article-featured-image" id="single-post-featured-image">
         <?php get_template_part('templates/article', 'header'); ?>
       </section>
-  </div>
 
-  <main class="content row main" role="main">
+      <section class="entry-content">
+        <?php the_content(); ?>
+      </section>
+
+      <section class="related-posts">
+        <?php get_template_part('templates/page', 'related'); ?>
+      </section>
+
+    </article>
 
     <aside class="four columns sidebar" role="complementary">
       &nbsp;
     </aside><!-- /.sidebar -->
-
-    <article <?php post_class('eight columns'); ?>>
-      <div class="entry-content">
-        <?php the_content(); ?>
-      </div>
-    </article>
 
   </main>
 </div>
