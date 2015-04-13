@@ -12,7 +12,7 @@ if (($tag != "") || ($city != "")) {
   $related = new WP_Query( $args );
   if ($related->have_posts()) {
 ?>
-  <h2 id="related-articles-header">Aiheeseen liittyviä artikkeleita</h2>
+  <h2 id="related-articles-header">Lue myös:</h2>
   <ul class="related-links">
 <?php
     while ($related->have_posts()) {
