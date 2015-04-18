@@ -107,6 +107,12 @@ body.page {
       }
     }
 
+    .wp-caption-text {
+      display: block;
+      text-align: right;
+      font-size: x-small;
+    }
+
     section.entry-content,
     div.entry-content {
       margin-top: 35px;
@@ -114,28 +120,28 @@ body.page {
   }
 
   /*
-      related links
-  */
+  related links
+   */
 
-  #related-articles-header {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  .related-links {
+#related-articles-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.related-links {
 
-    li {
-      float: left;
-      margin-right: 1%;
+  li {
+    float: left;
+    margin-right: 1%;
 
-      width: 32%;
+    width: 32%;
 
-      @media (max-width: @bp-larger-than-phablet) { width: 49%; }
-      @media (max-width: @bp-larger-than-mobile) { width: 100%; margin-right:0; }
+    @media (max-width: @bp-larger-than-phablet) { width: 49%; }
+    @media (max-width: @bp-larger-than-mobile) { width: 100%; margin-right:0; }
 
-      img {
-        width: 100%;
-        height: auto;
-      }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
+}
 }
