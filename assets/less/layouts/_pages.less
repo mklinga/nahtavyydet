@@ -94,6 +94,19 @@ body.page {
       height: auto;
     }
 
+    img.alignleft {
+      @media (min-width: @bp-larger-than-desktop) {
+        width: auto;
+        height: auto;
+        float: left;
+        margin-right: 15px;
+      }
+      @media (max-width: @bp-larger-than-desktop) {
+        max-width: 350px;
+        margin: auto;
+      }
+    }
+
     section.entry-content,
     div.entry-content {
       margin-top: 35px;
