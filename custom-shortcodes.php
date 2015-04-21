@@ -91,7 +91,7 @@ function show_attraction_link($attributes) {
 
   // If there's no attraction, just return the name
   if (!get_page_by_title($name, OBJECT, 'attraction'))
-    return '<span>' . $text . '</span>';
+    return '<span class="attraction-mention">' . $text . '</span>';
   else
     return '<a href="' . esc_url( get_permalink( get_page_by_path( sanitize_title($name), OBJECT, 'attraction' ) ) ) .'">' . $text .'</a>';
 }
