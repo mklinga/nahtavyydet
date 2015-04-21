@@ -1,36 +1,16 @@
 <?php
 
 /*
- * Attraction
+ * Helper functions
  */
 
-function show_attraction($attributes, $content = null) {
-
-  extract(shortcode_atts(array(
-    "name" => '',
-    "image" => 'yes',
-    "text" => ''
-  ), $attributes));
-
-  if ($name === '')
-    return '';
-
-  if ($text === '')
-    $text = $name;
-
-
-  $new_attraction = new WP_Query( array(
-    'post_type' => 'attraction',
-    'name' => sanitize_title($name),
-    'posts_per_page' => 1
-  ));
-
+function make_embedded_result($query, $content, $name, $image, $text) {
   $result = '<div class="embedded-attraction">';
 
-  if ($new_attraction->have_posts()) {
-    while ($new_attraction->have_posts()) 
+  if ($query->have_posts()) {
+    while ($query->have_posts()) 
     {
-      $new_attraction->the_post();
+      $query->the_post();
       $attraction_id = get_the_ID();
 
       /* Title */
@@ -64,6 +44,85 @@ function show_attraction($attributes, $content = null) {
   }
 
   $result .= '</div>';
+
+  return $result;
+}
+
+/*
+ * Location
+ */
+
+function show_location($attributes, $content = null) {
+
+  extract(shortcode_atts(array(
+    "name" => '',
+    "image" => 'yes',
+    "text" => ''
+  ), $attributes));
+
+  if ($name === '') return '';
+  if ($text === '') $text = $name;
+
+  $new_location = new WP_Query( array(
+    'post_type' => 'page',
+    'name' => sanitize_title($name),
+    'posts_per_page' => 1
+  ));
+
+  $result = make_embedded_result($new_location, $content, $name, $image, $text);
+
+  wp_reset_postdata();
+
+  return $result;
+}
+
+add_shortcode('location', 'show_location');
+
+/*
+ * Location mention
+ */
+
+function show_location_link($attributes) {
+
+  extract(shortcode_atts(array(
+    "name" => '',
+    "text" => ''
+  ), $attributes));
+
+  if ($name === '') return '';
+  if ($text === '') $text = $name;
+
+  // If there's no location, just return the name
+  if (!get_page_by_title($name, OBJECT, 'page'))
+    return '<span class="location-mention">' . $text . '</span>';
+  else
+    return '<a href="' . esc_url( get_permalink( get_page_by_path( sanitize_title($name), OBJECT, 'page' ) ) ) .'">' . $text .'</a>';
+}
+
+add_shortcode('location-mention', 'show_location_link');
+
+/*
+ * Attraction
+ */
+
+function show_attraction($attributes, $content = null) {
+
+  extract(shortcode_atts(array(
+    "name" => '',
+    "image" => 'yes',
+    "text" => ''
+  ), $attributes));
+
+  if ($name === '') return '';
+  if ($text === '') $text = $name;
+
+  $new_attraction = new WP_Query( array(
+    'post_type' => 'attraction',
+    'name' => sanitize_title($name),
+    'posts_per_page' => 1
+  ));
+
+  $result = make_embedded_result($new_attraction, $content, $name, $image, $text);
 
   wp_reset_postdata();
 
