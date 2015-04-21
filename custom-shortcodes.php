@@ -15,9 +15,13 @@ function show_attraction($attributes, $content = null) {
   if ($name === '')
     return '';
 
+  if ($text === '')
+    $text = $name;
+
+
   $new_attraction = new WP_Query( array(
     'post_type' => 'attraction',
-    'name' => $name,
+    'name' => sanitize_title($name),
     'posts_per_page' => 1
   ));
 
@@ -49,11 +53,7 @@ function show_attraction($attributes, $content = null) {
 
   }
   else {
-    // No attraction found (yet)
-    if ($text != '')
-      $result .= '<h2>' . $text . '</h2>';
-    else
-      $result .= '<h2>' . $name . '</h2>'; // last resort, could be "unslugged attempt instead"?
+      $result .= '<h2>' . $name . '</h2>';
   }
 
   if ($content != null) {
