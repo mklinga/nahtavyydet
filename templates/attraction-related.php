@@ -16,7 +16,8 @@ if (!empty($tag)) {
   foreach ($lists as $type) {
     $args = array(
       'post_type' => $type,
-      'tag_slug__in' => $tag
+      'tag_slug__in' => $tag,
+      'post__not_in' => array(get_the_ID())
     );
 
     $related = new WP_Query( $args );

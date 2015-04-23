@@ -14,7 +14,7 @@
       </section>
 
       <section class="related-posts">
-        <?php get_template_part('templates/page', 'related'); ?>
+        <?php get_template_part('templates/attraction', 'related'); ?>
       </section>
 
     </article>
