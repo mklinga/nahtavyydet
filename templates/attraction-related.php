@@ -1,37 +1,53 @@
 <?php
-$tag = get_post_meta(get_the_ID(), 'attraction-tag', true);
-$city = get_post_meta(get_the_ID(), 'attraction-city', true);
 
-if (($tag != "") || ($city != "")) {
+$tag = wp_get_post_tags(get_the_ID(), array('fields' => 'slugs'));
+$tag[] = get_post_meta(get_the_ID(), 'attraction-city', true);
 
-  $args = array(
-    'post_type' => 'post',
-    'tag' => $tag . "," . $city
+if (!empty($tag)) {
+
+/*
+ * Related posts
+ */
+  $lists = array(
+    array('type' => 'post', 'header' => 'Lue myös:'),
+    array('type' => 'attraction', 'header' => 'Aiheeseen liittyviä nähtävyyksiä')
   );
 
-  $related = new WP_Query( $args );
-  if ($related->have_posts()) {
-?>
-  <h2 id="related-articles-header">Lue myös:</h2>
-  <ul class="related-links">
-<?php
-    while ($related->have_posts()) {
-      $related->the_post();
+  foreach ($lists as $type) {
+    $args = array(
+      'post_type' => $type,
+      'tag_slug__in' => $tag
+    );
 
+    $related = new WP_Query( $args );
+    if ($related->have_posts()) {
 ?>
-    <li class="related-link"><a href="<?php the_permalink(); ?>">
+  <section class="related-<?php echo $type['type']; ?>s">
+    <h2 id="related-articles-header"><?php echo $type['header'];?></h2>
+    <ul class="related-links row">
 <?php
-      the_post_thumbnail('thumbnail');
-      the_title();
+      while ($related->have_posts()) {
+        $related->the_post();
 ?>
-      </a></li>
+        <li class="related-link"><a href="<?php the_permalink(); ?>">
+<?php
+        the_post_thumbnail('thumbnail');
+        the_title();
+?>
+  </a></li>
+<?php
+      }
+?>
+  </ul>
+  <span class="clear"></span>
+</section>
 <?php
     }
-?>
-    </ul>
-<?php
+
+    wp_reset_query();
+
   }
 
 
-}
+} // if !empty($tag)
 ?>

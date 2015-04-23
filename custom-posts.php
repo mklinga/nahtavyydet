@@ -36,7 +36,7 @@ function post_types_adding() {
     'hierarchical' => false,
     'menu_position' => null,
     'supports' => array('title', 'editor', 'thumbnail', 'comments'),
-    'taxonomies' => array('ct_attraction', 'ct_location'),
+    'taxonomies' => array('post_tag')
   );
 
   register_post_type('attraction',$args);
