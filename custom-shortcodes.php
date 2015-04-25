@@ -37,7 +37,7 @@ function make_embedded_result($query, $content, $name, $image, $text) {
   }
 
   if ($content != null) {
-    $result .= $content;
+    $result .= do_shortcode($content);
 
     // TODO: lue lisää - linkki tähän perään
     // $result .= '<span class="read-more">Lue lisää...</span>';
