@@ -50,7 +50,7 @@ if ($query->have_posts() ) {
 ?>
   <div class="six columns latest-article">
   <a href="<?php echo the_permalink(); ?>">
-<?php echo the_post_thumbnail('medium'); ?>
+<?php echo the_post_thumbnail('low-thumbnail'); ?>
 
     <section class="featured-header">
       <h2><?php the_title(); ?></h2>
