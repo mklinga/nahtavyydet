@@ -9,6 +9,7 @@ add_filter('image_size_names_choose', 'my_image_sizes');
 
 function my_image_sizes($sizes) {
   $addsizes = array(
+    "low-thumbnail" => __( "Matala thumbnail"),
     "extra-large" => __( "Erittäin suuri")
   );
 
