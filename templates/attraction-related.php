@@ -32,7 +32,7 @@ if (!empty($tag)) {
 ?>
         <li class="related-link"><a href="<?php the_permalink(); ?>">
 <?php
-        the_post_thumbnail('thumbnail');
+        the_post_thumbnail('low-thumbnail');
         the_title();
 ?>
   </a></li>
