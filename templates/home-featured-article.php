@@ -4,13 +4,20 @@
  *    Featured Post
  */
 
+if (function_exists('pll_current_language') && pll_current_language() === "en")
+  $category_name = "Featured-en";
+else
+  $category_name = "Featured";
+
 $query = new WP_Query(
   array(
-    'category_name' => 'featured',
+    'category_name' => $category_name,
     'posts_per_page' => 1,
     'order_by' => 'date'
   )
 );
+
+$featured_id = -1;
 
 if ($query->have_posts() ) {
   while ($query->have_posts() ) {
