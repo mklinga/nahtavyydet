@@ -9,8 +9,8 @@
 
 <?php
 
-  $country = get_post_meta(get_the_ID(), 'attraction-country', true);
-  $city = get_post_meta(get_the_ID(), 'attraction-city', true);
+  $country = get_post_meta(get_the_ID(), 'location-country', true);
+  $city = get_post_meta(get_the_ID(), 'location-city', true);
 
   if (($country != "") && ($city != ""))
     echo (make_link_or_span($country) . ' -> ' . make_link_or_span($city));
