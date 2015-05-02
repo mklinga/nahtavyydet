@@ -9,6 +9,10 @@
         <?php get_template_part('templates/article', 'header'); ?>
       </section>
 
+      <section class="breadcrumbs">
+        <?php get_template_part('templates/attraction', 'breadcrumbs'); ?>
+      </section>
+
       <section class="entry-content">
         <?php the_content(); ?>
       </section>
