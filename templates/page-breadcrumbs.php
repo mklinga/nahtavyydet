@@ -13,5 +13,5 @@
   $city = get_post_meta(get_the_ID(), 'location-city', true);
 
   if (($country != "") && ($city != ""))
-    echo (make_link_or_span($country) . ' -> ' . make_link_or_span($city));
+    echo (make_link_or_span($country) . ' / ' . make_link_or_span($city));
 ?>
