@@ -4,34 +4,42 @@ $city = get_post_meta(get_the_ID(), 'location-city', true);
 
 if (($country != "") || ($city != "")) {
 
-  $args = array(
-    'post_type' => 'post',
-    'tag' => $country . "," . $city
+  $lists = array(
+    array('type' => 'post', 'header' => 'Lue myös:'),
+    array('type' => 'attraction', 'header' => 'Nähtävyydet:')
   );
 
-  $related = new WP_Query( $args );
-  if ($related->have_posts()) {
+  foreach ($lists as $type) {
+    $args = array(
+      'post_type' =>$type,
+      'tag' => $country . "," . $city
+    );
+
+    $related = new WP_Query( $args );
+    if ($related->have_posts()) {
 ?>
-  <h2 id="related-articles-header">Lue myös:</h2>
+  <h2 id="related-articles-header"><?php echo $type['header']; ?></h2>
   <ul class="related-links">
 <?php
-    while ($related->have_posts()) {
-      $related->the_post();
+      while ($related->have_posts()) {
+        $related->the_post();
 
 ?>
     <li class="related-link"><a href="<?php the_permalink(); ?>">
 <?php
-      the_post_thumbnail('low-thumbnail');
-      the_title();
+        the_post_thumbnail('low-thumbnail');
+        the_title();
 ?>
       </a></li>
 <?php
-    }
+      }
 ?>
     </ul>
 <?php
-  }
+    }
 
+
+  }
 
 }
 ?>
