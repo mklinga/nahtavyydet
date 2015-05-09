@@ -41,6 +41,7 @@ function post_types_adding() {
 
   register_post_type('attraction',$args);
 
+  add_post_type_support('page', 'excerpt');
   flush_rewrite_rules();
 
 }

@@ -28,6 +28,14 @@ Template Name: Home Template
   </div>
 
   <div class="row">
+
+    <section class="twelve columns cities">
+      <?php get_template_part('templates/home', 'featured-city'); ?>
+    </section>
+
+  </div>
+
+  <div class="row">
     
     <section class="twelve columns new-attractions">
       <?php get_template_part('templates/home', 'new-attractions'); ?>
