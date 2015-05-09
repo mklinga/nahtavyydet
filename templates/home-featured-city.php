@@ -14,9 +14,13 @@ if ($query->have_posts()) {
   while ($query->have_posts()) {
     $query->the_post();
 ?>
-  <h2>Kaupunkiesittelyssä <?php the_title(); ?>!</h2>
+  <a href="<?php the_permalink(); ?>">
+    <h2>Kaupunkiesittelyssä <?php the_title(); ?>!</h2>
+  </a>
   <section class="home-featured-city">
+  <a href="<?php the_permalink(); ?>">
     <?php echo the_post_thumbnail('large'); ?>
+   </a>
     <div class="featured-city-excerpt"><?php the_excerpt(); ?></div>
   </section>
 <?php
