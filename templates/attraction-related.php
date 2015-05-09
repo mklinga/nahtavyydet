@@ -15,7 +15,7 @@ if (!empty($tag)) {
 
   foreach ($lists as $type) {
     $args = array(
-      'post_type' => $type,
+      'post_type' => $type['type'],
       'tag_slug__in' => $tag,
       'post__not_in' => array(get_the_ID())
     );
