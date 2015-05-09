@@ -5,14 +5,14 @@ $city = get_post_meta(get_the_ID(), 'location-city', true);
 if (($country != "") || ($city != "")) {
 
   $lists = array(
-    array('type' => 'post', 'header' => 'Lue myös:'),
-    array('type' => 'attraction', 'header' => 'Nähtävyydet:')
+    array('type' => 'post', 'header' => 'Lue myös:', 'tags' => ($country . "," . $city)),
+    array('type' => 'attraction', 'header' => 'Nähtävyydet:', 'tags' => $city)
   );
 
   foreach ($lists as $type) {
     $args = array(
-      'post_type' =>$type,
-      'tag' => $country . "," . $city
+      'post_type' =>$type['type'],
+      'tag' => $type['tags']
     );
 
     $related = new WP_Query( $args );
