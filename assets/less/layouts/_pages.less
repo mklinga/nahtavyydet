@@ -72,6 +72,7 @@ body.page {
   section.breadcrumbs {
     font-size: small;
   }
+
   div.article-content {
     margin-top: 35px;
 
@@ -133,6 +134,20 @@ body.page {
     ul {
       list-style: disc;
       margin-left: 50px;
+    }
+
+    .youtube-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px; height: 0; overflow: hidden;
+
+      iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
