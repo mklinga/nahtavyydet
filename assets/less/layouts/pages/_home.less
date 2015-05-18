@@ -28,12 +28,14 @@ body.page-template-template-home {
         margin-bottom: 5px;
       }
 
-      &.latest-attraction:nth-of-type(3n+1) {
-        margin:0;
-      }
+      @media (min-width: @bp-larger-than-tablet) {
+        &.latest-attraction:nth-of-type(3n+1) {
+          margin:0;
+        }
 
-      &.latest-article:nth-of-type(2n+1) {
-        float: right;
+        &.latest-article:nth-of-type(2n+1) {
+          float: right;
+        }
       }
 
       img {
@@ -118,8 +120,8 @@ body.page-template-template-home {
 
     .google-large-rectangle {
       // background-color: #eef;
-      width: 300px;
-      height: 600px;
+      // width: 300px;
+      // height: 600px;
     }
   }
 
