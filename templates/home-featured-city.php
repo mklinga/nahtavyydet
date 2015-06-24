@@ -15,7 +15,7 @@ if ($query->have_posts()) {
     $query->the_post();
 ?>
   <a href="<?php the_permalink(); ?>">
-    <h2>Kaupunkiesittelyssä <?php the_title(); ?>!</h2>
+    <h2>Esittelyssä <?php the_title(); ?>!</h2>
   </a>
   <section class="home-featured-city">
   <a href="<?php the_permalink(); ?>">

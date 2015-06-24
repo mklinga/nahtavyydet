@@ -40,6 +40,46 @@ function post_types_adding() {
   );
 
   register_post_type('attraction',$args);
+  flush_rewrite_rules();
+
+
+  /**
+   *  Travelblog
+   */
+
+  $labels = array(
+    'name' => __('Matkamuistot'),
+    'singular_name' => __('Matkamuistot'),
+    'add_new' => __('Add New'),
+    'add_new_item' => __('Add New Matkamuisto'),
+    'edit_item' => __('Edit Matkamuisto'),
+    'new_item' => __('New Matkamuisto'),
+    'all_items' => __('All Matkamuistot'),
+    'view_item' => __('View this Matkamuisto'),
+    'search_items' => __('Search Matkamuistot'),
+    'not_found' =>  __('No Matkamuistot'),
+    'not_found_in_trash' => __('No Matkamuistot in Trash'),
+    'parent_item_colon' => '',
+    'menu_name' => __('Matkamuistot'),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'capability_type' => 'post',
+    'rewrite' => array('slug' => 'matkamuistot', 'with_front' => true),
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array('title', 'editor', 'thumbnail', 'comments', 'page-attributes'),
+    'taxonomies' => array('post_tag'),
+    'has_archive' => true
+  );
+
+  register_post_type('diary',$args);
 
   add_post_type_support('page', 'excerpt');
   flush_rewrite_rules();
