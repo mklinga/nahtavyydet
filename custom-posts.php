@@ -74,7 +74,7 @@ function post_types_adding() {
     'rewrite' => array('slug' => 'matkamuistot', 'with_front' => true),
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title', 'editor', 'thumbnail', 'comments', 'page-attributes'),
+    'supports' => array('title', 'editor', 'thumbnail', 'comments', 'page-attributes', 'excerpt'),
     'taxonomies' => array('post_tag'),
     'has_archive' => true
   );
