@@ -15,7 +15,7 @@ if ($links->have_posts()) {
 ?>
 
 <div>
-  <h1 class="sidebar-header">Artikkeleita</h1>
+  <h2 class="sidebar-header">Artikkeleita</h2>
 </div>
 
 <ul class="sidebar-list">
@@ -25,8 +25,8 @@ if ($links->have_posts()) {
     $links->the_post();
 ?>
   <li>
-    <?php the_post_thumbnail('low-thumbnail'); ?>
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <span class="sidebar-link-date"><?php the_modified_date('j.n.Y'); ?></span>
   </li>
 <?php
   }
@@ -49,7 +49,7 @@ if ($links->have_posts()) {
 ?>
 
 <div>
-  <h1 class="sidebar-header">Uusia nähtävyyksiä</h1>
+  <h2 class="sidebar-header">Uusia nähtävyyksiä</h2>
 </div>
 
 <ul class="sidebar-list">
@@ -59,8 +59,8 @@ if ($links->have_posts()) {
     $links->the_post();
 ?>
   <li>
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
-    <span class="sidebar-link-date"><?php the_modified_date(); ?></span>
+    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <span class="sidebar-link-date"><?php the_modified_date('j.n.Y'); ?></span>
   </li>
 <?php
   }

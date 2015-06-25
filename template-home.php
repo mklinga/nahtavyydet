@@ -13,7 +13,7 @@ Template Name: Home Template
       <?php get_template_part('templates/home', 'featured-article'); ?>
     </section>
 
-    <aside class="four columns home-aside-right">
+    <aside class="four columns sidebar home-aside-right">
       <?php get_template_part('templates/home', 'aside-right'); ?>
     </aside>
 

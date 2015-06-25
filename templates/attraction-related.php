@@ -24,7 +24,7 @@ if (!empty($tag)) {
     if ($related->have_posts()) {
 ?>
   <section class="related-<?php echo $type['type']; ?>s">
-    <h2 id="related-articles-header"><?php echo $type['header'];?></h2>
+    <h2 class="related-articles-header"><?php echo $type['header'];?></h2>
     <ul class="related-links row">
 <?php
       while ($related->have_posts()) {

@@ -18,7 +18,7 @@ if (($country != "") || ($city != "")) {
     $related = new WP_Query( $args );
     if ($related->have_posts()) {
 ?>
-  <h2 id="related-articles-header"><?php echo $type['header']; ?></h2>
+  <h2 class="related-articles-header"><?php echo $type['header']; ?></h2>
   <ul class="related-links">
 <?php
       while ($related->have_posts()) {
