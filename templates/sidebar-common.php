@@ -9,4 +9,7 @@
  */
 
 get_template_part('templates/diary', 'links');
+
+get_template_part('templates/recent', 'links');
+
 ?>

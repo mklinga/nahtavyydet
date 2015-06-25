@@ -21,7 +21,7 @@ if ($diaries->have_posts()) {
     $diaries->the_post();
 ?>
   <li>
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     <span class="diary-date"><?php the_modified_date(); ?></span>
   </li>
 <?php
@@ -31,5 +31,8 @@ if ($diaries->have_posts()) {
 </ul>
 
 <?php
+
+  wp_reset_postdata();
 } // if have_posts
+
 ?>
