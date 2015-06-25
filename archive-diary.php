@@ -8,16 +8,19 @@
       <section class="archive-diary-featured-image">
         <?php
           if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+
+            echo '<a href="' . get_the_permalink() . '">';
             the_post_thumbnail('low-thumbnail');
+            echo '</a>';
           }
         ?>
 
       </section>
 
-<?php /* TODO: title */ ?>
-
       <section class="entry-content">
-        <?php echo '<p>' . wp_trim_words( get_the_content() , 80 ) . ' <a href="' . get_the_permalink() . '">Lue lisää</a></p>'; ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+        <?php echo '<p>' . wp_trim_words( get_the_content() , 80 ) . ' <a href="' . get_the_permalink() . '">Lue lisää...</a></p>'; ?>
       </section>
 
     </article>
