@@ -20,7 +20,7 @@
     </article>
 
     <aside class="four columns sidebar" role="complementary">
-      &nbsp;
+      <?php get_template_part('templates/diary', 'links'); ?>
     </aside><!-- /.sidebar -->
 
   </main>
