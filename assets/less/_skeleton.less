@@ -39,13 +39,19 @@
 @bp-larger-than-desktophd : 1200px;
 
 // Colors
-@light-grey: #e1e1e1;
-@dark-grey: #333;
 @primary-color: #33c3f0;
-@secondary-color: lighten(@dark-grey, 13.5%);
+@secondary-color: #ffc22e;
+
+// Strong accent
+@accent-color: #ff4f2e;
+
 @border-color: #bbb;
 @link-color: #1b9cc5;
 @font-color: #222;
+
+@light-grey: #e1e1e1;
+@middle-grey: #aaa;
+@dark-grey: #555;
 
 // Typography
 @font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -233,7 +239,7 @@ button {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: @secondary-color;
+  color: @middle-grey;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
