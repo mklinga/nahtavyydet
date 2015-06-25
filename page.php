@@ -24,7 +24,7 @@
     </article>
 
     <aside class="four columns sidebar" role="complementary">
-      <?php get_template_part('templates/diary', 'links'); ?>
+      <?php get_template_part('templates/sidebar', 'common'); ?>
     </aside><!-- /.sidebar -->
 
   </main>
