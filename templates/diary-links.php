@@ -24,7 +24,7 @@ if ($diaries->have_posts()) {
 ?>
   <li>
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    <span class="diary-date"><?php the_modified_date('j.n.Y'); ?></span>
+    <span class="sidebar-subtext diary-date"><?php echo get_the_date('j.n.Y'); ?></span>
   </li>
 <?php
   }
