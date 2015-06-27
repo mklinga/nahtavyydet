@@ -9,11 +9,24 @@
         <?php get_template_part('templates/article', 'header'); ?>
       </section>
 
+<?php if (is_singular('attraction')) { ?>
+      <section class="breadcrumbs">
+        <?php get_template_part('templates/attraction', 'breadcrumbs'); ?>
+      </section>
+<?php } ?>
+
       <section class="entry-content">
-        <?php the_content(); ?>
+        <?php
+        if (is_singular('diary')) {
+          get_template_part('templates/diary', 'content');
+        }
+        else {
+          the_content();
+        }
+        ?>
       </section>
 
-      <section class="related-posts">
+      <section class="related-articles">
         <?php get_template_part('templates/attraction', 'related'); ?>
       </section>
 
@@ -25,4 +38,6 @@
 
   </main>
 </div>
+
 <?php endwhile; ?>
+
