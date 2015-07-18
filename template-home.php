@@ -9,8 +9,8 @@ Template Name: Home Template
 
   <div class="row">
 
-    <section class="eight columns featured-post">
-      <?php get_template_part('templates/home', 'featured-article'); ?>
+    <section class="eight columns new-attractions">
+      <?php get_template_part('templates/home', 'attractions'); ?>
     </section>
 
     <aside class="four columns sidebar home-aside-right">
@@ -37,8 +37,8 @@ Template Name: Home Template
 
   <div class="row">
     
-    <section class="twelve columns new-attractions">
-      <?php get_template_part('templates/home', 'new-attractions'); ?>
+    <section class="twelve columns featured-post">
+      <?php get_template_part('templates/home', 'articles'); ?>
     </section>
   </div>
 

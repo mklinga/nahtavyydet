@@ -1,9 +1,9 @@
-<h2>Uusimmat nähtävyydet sivulla:</h2>
+<h2>Lisää luettavaa</h2>
 <?php
 
 $query = new WP_Query(
   array(
-    'post_type' => 'attraction',
+    'post_type' => 'post',
     'posts_per_page' => 6,
     'order_by' => 'date',
     'order' => 'DESC'
